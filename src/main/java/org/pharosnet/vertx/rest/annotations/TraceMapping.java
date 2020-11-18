@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.CLASS)
-public @interface GetMapping {
+public @interface TraceMapping {
 
     String operatorId() default "";
 
@@ -15,8 +15,8 @@ public @interface GetMapping {
 
     String path();
 
-    String consumes() default "";
+    String[] consumes() default {};
 
-    String produces() default "";
+    String[] produces() default {};
 
 }

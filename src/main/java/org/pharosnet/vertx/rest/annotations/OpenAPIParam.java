@@ -1,5 +1,7 @@
 package org.pharosnet.vertx.rest.annotations;
 
+import org.pharosnet.vertx.rest.RequestParamType;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -18,11 +20,6 @@ public @interface OpenAPIParam {
     String allowableValues() default "";
 
     boolean required() default false;
-    /**
-     * The parameter type of the parameter.
-     * <p>
-     * Valid values are {@code path}, {@code query}, {@code body},
-     * {@code header} or {@code form}.
-     */
-    String paramType() default "";
+
+    RequestParamType paramType() default RequestParamType.UNDEFINED;
 }

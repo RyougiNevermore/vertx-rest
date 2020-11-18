@@ -1,18 +1,22 @@
 package org.pharosnet.vertx.rest.annotations;
 
-import org.pharosnet.vertx.rest.RequestMethod;
-
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.CLASS)
-@RequestMapping(method = RequestMethod.POST)
 public @interface PostMapping {
 
-    String[] path() default {};
+    String operatorId() default "";
 
-    String[] consumes() default {};
+    String description() default "";
 
-    String[] produces() default {};
+    String path();
+
+    String consumes() default "";
+
+    String produces() default "";
 
 }

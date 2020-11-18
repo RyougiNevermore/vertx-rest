@@ -5,18 +5,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD)
+@Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.CLASS)
-public @interface GetMapping {
+public @interface QueryParam {
 
-    String operatorId() default "";
+    String name();
 
-    String description() default "";
+    String description();
 
-    String path();
+    boolean required() default false;
 
-    String consumes() default "";
-
-    String produces() default "";
+    String defaultValue() default "";
 
 }

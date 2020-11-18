@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.CLASS)
-public @interface GetMapping {
+public @interface OptionsMapping {
 
     String operatorId() default "";
 
