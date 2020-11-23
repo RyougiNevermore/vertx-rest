@@ -5,23 +5,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.ANNOTATION_TYPE)
 @Retention(RetentionPolicy.CLASS)
-public @interface OpenAPI {
+public @interface OpenAPITag {
 
-    // swagger ui url
-    String path();
-
-    String title();
+    String name();
 
     String description();
-
-    String version();
-
-    OpenAPIContact contact();
-
-    OpenAPITag[] tags() default {};
-
-    // todo global response
 
 }
